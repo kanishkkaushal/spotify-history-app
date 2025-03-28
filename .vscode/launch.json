@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Pytest",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": ["tests"],
+            "env": {
+                "SPOTIPY_CLIENT_ID": "0efdd3b4e0a44970806fb3c4c741f752",
+                "SPOTIPY_CLIENT_SECRET": "3e0a7446c9d746cdb0a12d9e954a5326",
+                "SPOTIPY_REDIRECT_URI": "http://localhost:5000/callback"
+            },
+            "justMyCode": true
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Song History</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #282828;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        a {
+            color: #1DB954;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Last 10 Songs</h1>
+    <ul>
+        {% for item in tracks %}
+            <li>
+                <strong>{{ item.track.name }}</strong> by
+                {% for artist in item.track.artists %}
+                    {{ artist.name }}{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
